@@ -3,7 +3,7 @@ library(magick)
 
 setwd("./DATA/imageR")
 
-#### Tuto ensemble ####
+#---- Tuto ensemble ----
 
 bigdata <- image_read('https://jeroen.github.io/images/bigdata.jpg')
 frink <- image_read("https://jeroen.github.io/images/frink.png")
@@ -31,7 +31,7 @@ image_resize(c(oldlogo, newlogo), '200x150!') %>%
   image_morph() %>%
   image_animate()
 
-#### GIF complet ####
+#---- GIF complet ----
 
 # Foreground image
 banana <- image_read("https://jeroen.github.io/images/banana.gif")
@@ -49,13 +49,13 @@ animation <- image_animate(frames, fps = 10)
 print(animation)
 
 
-#### Test GIF perso ####
+#---- Test GIF perso ----
 
 # Images sources
-carte1 <- image_read("seuil9000habitants1.png")
+carte1 <- image_read("data/seuil9000habitants1.png")
 carte1 <- image_scale(carte1, "800")
 
-carte2 <- image_read("seuil9000habitants2.png")
+carte2 <- image_read("data/seuil9000habitants2.png")
 carte2 <- image_scale(carte2, "800")
 
 #Associer les images dans un vecteur
@@ -63,4 +63,4 @@ carte <- c(carte2, carte1)
 
 #Créer le gif
 cartegif <- image_animate(image_scale(carte, "800"), fps = 1, dispose = "previous")
-image_write(cartegif, "carteseuil.gif")
+image_write(cartegif, "figures/carteseuil.gif")
