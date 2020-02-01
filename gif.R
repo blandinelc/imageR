@@ -1,8 +1,6 @@
 library(magick)
 #tuto : https://cran.r-project.org/web/packages/magick/vignettes/intro.html
 
-setwd("./DATA/imageR")
-
 #---- Tuto ensemble ----
 
 bigdata <- image_read('https://jeroen.github.io/images/bigdata.jpg')
